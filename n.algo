@@ -1,14 +1,14 @@
-ALGORITHM checkpoint2(VAR arr : ARRAY_OF INTEGER)
+ALGORITHM checkpoint2(VAR tab: ARRAY_OF INTEGER)
 VAR
-    i:INTEGER;
-    j: ARRAY_OF INTEGER[i];
+    i, j, n : INTEGER;
 BEGIN
-    FOR i FROM 1 TO (len(arr)-1) DO
-        j[i]:= arr[i]
-        WHILE (i>0 and arr[i-1]> j[i]) DO
-            arr[i]:=arr[i-1]
-            i:=i-1
-        END_WHILE
-        arr[i] := j[i]
+    n := tab.length;
+    FOR i FROM 1 TO n-1 DO
+        j:=i-1;
+        FOR j FROM i+1 TO n-1  DO
+            IF (t[i]>t[j]) THEN
+                swap(tab[i], tab[j]);
+            END_IF
+        END_FOR
     END_FOR
 END
